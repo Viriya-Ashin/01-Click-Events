@@ -1,21 +1,30 @@
-var passwordBtnEl = $('#password-btn');
-var passwordDisplayEl = $('#password-display');
+// jQuery selectors for elements with IDs 'password-btn' and 'password-display'
+var passwordBtnEl = $('#password-btn');    // Selecting the button element with ID 'password-btn'
+var passwordDisplayEl = $('#password-display');  // Selecting the display element with ID 'password-display'
 
-// Returns a random character that includes alphanumeric and special character values
+// Function to return a random character including alphanumeric and special character values
 function getPasswordCharacter() {
+  // Generates a random character code between 34 and 110 (inclusive) using Math.random() and String.fromCharCode()
   return String.fromCharCode(Math.floor(Math.random() * 77) + 34);
 }
 
-// Returns a string of concatenated characters of length num
+// Function to generate a password string of concatenated characters of a specified length
 function passwordGenerator(num) {
-  var password = '';
-  for (var i = 0; i < num; i++) {
-    password += getPasswordCharacter();
+  var password = '';  // Initialize an empty string to hold the generated password
+  for (var i = 0; i < num; i++) {  // Loop 'num' times to generate 'num' characters
+    password += getPasswordCharacter();  // Append a random character to the password string
   }
-  return password;
+  return password;  // Return the generated password
 }
 
+// Event listener for a double-click event on the password button element
 passwordBtnEl.on('dblclick', function () {
-  var newPassword = passwordGenerator(15);
-  passwordDisplayEl.text(newPassword);
+  var newPassword = passwordGenerator(15);  // Generate a new password of length 15
+  passwordDisplayEl.text(newPassword);  // Display the new password in the password display element
+
 });
+
+var x = 3;
+var y = 4;
+console.log(4 + 4)
+
